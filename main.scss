@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+
+*{box-sizing: border-box;}
+
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+
+$darkBlue: hsl(234, 12%, 34%);
+$grayishBlue: hsl(229, 6%, 66%);
+$lightGray: hsl(0, 0%, 98%);
+
+html{font-size: 62.5%;}
+
+body{margin: 0; min-height: 100vh; display: grid; place-items: center; font-family: 'Poppins', sans-serif; background-color: $lightGray;
+    main{width: 89vw; max-width: 1110px; padding: 60px 0 60px; display:grid; gap:64px; //height: 747px;
+        .titles{text-align: center; margin-top: 26px;
+            h1, h2{margin: 0; line-height: 3rem; color:$darkBlue;}
+            h1{font-size: 3.5rem; font-weight: 200; letter-spacing: 0.06rem;}
+            h2{font-size: 3.5rem; font-weight: 600; letter-spacing: 0.08rem; margin: 22px 0 28px;}
+            p{font-size: 1.5rem; font-weight: 400; letter-spacing: 0.01rem; max-width: 540px; margin: 0 auto; line-height: 2.42rem; color:$grayishBlue;}
+        }
+
+        .columns{display: grid; grid-template: 1fr / 1fr 1fr 1fr; gap: 30px;
+            .column{display: grid; gap:30px; place-items: center;
+                .card{display: grid; box-shadow: 0px 12px 30px -20px rgba(0, 0, 0, 0.3); height: 250px; border-top: 4px solid; border-radius: 6px; width: 100%; color:$darkBlue; padding: 28px 32px 32px; background-color: white;
+                    label{font-size: 1.9rem; font-weight: 600; letter-spacing: 0.05rem; margin-bottom: -11px;}
+                    p{font-size: 1.2rem; font-weight: 400; letter-spacing: 0.05rem; margin: 0 0 0; line-height: 1.83em; color:$grayishBlue;}
+                    img{align-self: flex-end; justify-self: flex-end;}
+                    &.red{border-color: $red;}
+                    &.orange{border-color: $orange;}
+                    &.cyan{border-color: $cyan;}
+                    &.blue{border-color: $blue;}
+                }
+            } 
+        }  
+        
+        @media(max-width:885px){max-width: 430px; gap:0;
+            .columns{display: block;  
+                .column{display: block;
+                   .card{ margin: 30px 0;}
+                }
+            }
+        }
+
+        @media(max-width:600px){
+           .titles{margin-top: 0;
+               h1{font-size: 2.2rem; line-height: 1em;}
+               h2{font-size: 2.2rem; line-height: 1.83em; margin: 0;}
+               p{margin: 12px 0 38px;}
+           }
+        }
+    }
+}
